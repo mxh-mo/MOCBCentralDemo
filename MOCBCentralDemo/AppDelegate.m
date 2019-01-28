@@ -1,12 +1,13 @@
 //
 //  AppDelegate.m
-//  MOPeripheralDemo
+//  MOCBCentralDemo
 //
-//  Created by moxiaoyan on 2019/1/22.
+//  Created by moxiaoyan on 2019/1/28.
 //  Copyright © 2019 moxiaoyan. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "MOPersViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
+  UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[MOPersViewController new]];
+  self.window.rootViewController = nav;
   return YES;
 }
 

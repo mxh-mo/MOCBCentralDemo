@@ -1,8 +1,8 @@
 //
 //  ViewController.h
-//  MOPeripheralDemo
+//  MOCBCentralDemo
 //
-//  Created by moxiaoyan on 2019/1/22.
+//  Created by moxiaoyan on 2019/1/28.
 //  Copyright © 2019 moxiaoyan. All rights reserved.
 //
 
