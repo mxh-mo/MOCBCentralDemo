@@ -40,7 +40,7 @@
 
 - (void)startScan {
   self.peripheralArr = [NSMutableArray array];
-  [_centralManager scanForPeripheralsWithServices:nil options:nil];
+  [_centralManager scanForPeripheralsWithServices:nil options:@{CBCentralManagerScanOptionAllowDuplicatesKey:@(YES)}];
 }
 
 - (void)stopScan {
@@ -96,8 +96,7 @@
 }
 
 
-
-#pragma ------- CBCentralManagerDelegate
+#pragma mark - CBCentralManagerDelegate
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central {
   switch (central.state) {
     case CBCentralManagerStateUnknown: NSLog(@"CBCentralManagerStateUnknown"); break;
@@ -200,26 +199,9 @@
     NSLog(@"读取失败: %@", error.description);
     return;
   }
-  _index++;
-  NSInteger endIndx = 0;
   NSData *data = [[NSMutableData alloc] initWithData:characteristic.value];
-//  if (data.length >= 2) {
-//    NSData *endData = [data subdataWithRange:NSMakeRange(data.length - 2, 1)];
-//    endIndx = [self.class uint16Value:endData offset:0];
-//    if (endIndx != _index) {
-//      NSLog(@"index 不对");
-//      [self writeErrorCharacteristic:characteristic];
-//      return;
-//    } else {
-////      [self writeContinueCharacteristic:characteristic];
-//    }
-//  }
+  NSLog(@"读取成功: value：%@ length:%lu", data, (unsigned long)data.length);
 
-  NSInteger value = [self.class uint16Value:data offset:0];
-  NSLog(@"--- 读取成功 value:%ld  data.length:%lu", (long)value, (unsigned long)data.length);
-  [self.notifyData appendData:data];
-  [self.datas addObject:@{@"index":@(_index), @"length": @(data.length)}];
-  NSLog(@"Data大小:%lu indx:%ld endIndex:%d", (unsigned long)[_notifyData length], (long)endIndx, _index);
   [self operationDelegate:^(id delegate) {
     if ([delegate respondsToSelector:@selector(didUpdateValueForCharacteristic)]) {
       [delegate didUpdateValueForCharacteristic];
@@ -283,9 +265,6 @@
     }
   }];
 }
-
-
-
 
 - (NSURL *)getAndCreatePlayableFileFromPcmData:(NSString *)filePath {
   NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];

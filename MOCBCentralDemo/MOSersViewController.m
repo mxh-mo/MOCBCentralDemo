@@ -35,6 +35,7 @@
 #pragma mark - MOBLEManagerDelegate
 - (void)didDiscoverServices:(NSError *)error {
   self.services = [MOBLEManager shareInstance].connectPer.services;
+  NSLog(@"didDiscoverServices:%@", self.services);
   if (error) {
     self.nameLb.text = [NSString stringWithFormat:@"获取service失败 %@\n%@\n%@", _per.name, _per.identifier, error.description];
   } else {
@@ -77,14 +78,17 @@
   static NSString *cellIndentify = @"UITableViewCell";
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentify];
   if (!cell) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentify];
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIndentify];
   }
   cell.textLabel.font = [UIFont systemFontOfSize:14];
   cell.textLabel.numberOfLines = 0;
   cell.contentView.backgroundColor = indexPath.row % 2 == 0 ? UIColor.lightGrayColor : UIColor.whiteColor;
   CBService *service = self.services[indexPath.row];
-  cell.textLabel.text = service.description;
-  
+  cell.textLabel.text = service.UUID.UUIDString;
+  cell.textLabel.textColor = [UIColor redColor];
+  cell.detailTextLabel.text = service.description;
+  cell.detailTextLabel.textColor = [UIColor blackColor];
+  cell.detailTextLabel.numberOfLines = 0;
   // --- 方便测试
 //  if ([service.UUID.UUIDString containsString:@"8866"]) {
 //    MOChasViewController *vc = [MOChasViewController new];

@@ -68,7 +68,6 @@
   [self.tableView reloadData];
 }
 
-
 - (void)clickReadBtn {
   [[MOBLEManager shareInstance] readCharacteristic:self.cha];
 }
