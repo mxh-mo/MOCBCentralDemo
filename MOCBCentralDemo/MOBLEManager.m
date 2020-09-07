@@ -7,6 +7,7 @@
 //
 
 #import "MOBLEManager.h"
+#import "MODevice.h"
 #define kSaveDataFileName @"/ticpod_ble_data"
 #define kSaveWavDataFileName @"/ticpod_ble_wav_data"
 
@@ -128,6 +129,13 @@
         [delegate discoverPeripheral];
       }
     }];
+  }
+  MODevice *device = [[MODevice alloc] initWithCBPeripheral:peripheral
+                                          advertisementData:advertisementData
+                                                       rssi:RSSI];
+//  if ([device.currentMacAddress isEqualToString:@"8c:91:09:57:1f:c7"] ||
+  if ([device.currentMacAddress containsString:@"00:00:ab:cd:b1:e1"]) {
+    NSLog(@"moxiaoyan: %@ %@", device.currentMacAddress, peripheral.identifier.UUIDString);
   }
 }
 

@@ -19,6 +19,9 @@
 		8206ED8521FEB7420072EAD8 /* NSObject+MultiDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8206ED7B21FEB7410072EAD8 /* NSObject+MultiDelegate.m */; };
 		8206ED8621FEB7420072EAD8 /* MOChaHandleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8206ED7F21FEB7410072EAD8 /* MOChaHandleViewController.m */; };
 		8206ED8721FEB7420072EAD8 /* MOBLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8206ED8121FEB7420072EAD8 /* MOBLEManager.m */; };
+		82A51D1124E68F64003D2B00 /* NSData+HexRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A51D0F24E68F64003D2B00 /* NSData+HexRepresentation.m */; };
+		82A51D1424E691FC003D2B00 /* MODevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A51D1324E691FC003D2B00 /* MODevice.m */; };
+		82A51D1724E692F6003D2B00 /* CSRBLEUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A51D1524E692F6003D2B00 /* CSRBLEUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,12 @@
 		8206ED7F21FEB7410072EAD8 /* MOChaHandleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOChaHandleViewController.m; sourceTree = "<group>"; };
 		8206ED8021FEB7420072EAD8 /* MOBLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBLEManager.h; sourceTree = "<group>"; };
 		8206ED8121FEB7420072EAD8 /* MOBLEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBLEManager.m; sourceTree = "<group>"; };
+		82A51D0F24E68F64003D2B00 /* NSData+HexRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+HexRepresentation.m"; sourceTree = "<group>"; };
+		82A51D1024E68F64003D2B00 /* NSData+HexRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+HexRepresentation.h"; sourceTree = "<group>"; };
+		82A51D1224E691FC003D2B00 /* MODevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MODevice.h; sourceTree = "<group>"; };
+		82A51D1324E691FC003D2B00 /* MODevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MODevice.m; sourceTree = "<group>"; };
+		82A51D1524E692F6003D2B00 /* CSRBLEUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRBLEUtil.m; sourceTree = "<group>"; };
+		82A51D1624E692F6003D2B00 /* CSRBLEUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRBLEUtil.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +89,8 @@
 				8206ED6121FEB6E70072EAD8 /* AppDelegate.m */,
 				8206ED8021FEB7420072EAD8 /* MOBLEManager.h */,
 				8206ED8121FEB7420072EAD8 /* MOBLEManager.m */,
+				82A51D1224E691FC003D2B00 /* MODevice.h */,
+				82A51D1324E691FC003D2B00 /* MODevice.m */,
 				8206ED7E21FEB7410072EAD8 /* MOPersViewController.h */,
 				8206ED7621FEB7410072EAD8 /* MOPersViewController.m */,
 				8206ED7821FEB7410072EAD8 /* MOSersViewController.h */,
@@ -92,6 +103,10 @@
 				8206ED7B21FEB7410072EAD8 /* NSObject+MultiDelegate.m */,
 				8206ED6321FEB6E70072EAD8 /* ViewController.h */,
 				8206ED6421FEB6E70072EAD8 /* ViewController.m */,
+				82A51D1024E68F64003D2B00 /* NSData+HexRepresentation.h */,
+				82A51D0F24E68F64003D2B00 /* NSData+HexRepresentation.m */,
+				82A51D1624E692F6003D2B00 /* CSRBLEUtil.h */,
+				82A51D1524E692F6003D2B00 /* CSRBLEUtil.m */,
 				8206ED6621FEB6E70072EAD8 /* Main.storyboard */,
 				8206ED6921FEB6E90072EAD8 /* Assets.xcassets */,
 				8206ED6B21FEB6E90072EAD8 /* LaunchScreen.storyboard */,
@@ -171,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82A51D1424E691FC003D2B00 /* MODevice.m in Sources */,
 				8206ED6521FEB6E70072EAD8 /* ViewController.m in Sources */,
 				8206ED8621FEB7420072EAD8 /* MOChaHandleViewController.m in Sources */,
 				8206ED8521FEB7420072EAD8 /* NSObject+MultiDelegate.m in Sources */,
@@ -178,8 +194,10 @@
 				8206ED8321FEB7420072EAD8 /* MOChasViewController.m in Sources */,
 				8206ED8721FEB7420072EAD8 /* MOBLEManager.m in Sources */,
 				8206ED8221FEB7420072EAD8 /* MOPersViewController.m in Sources */,
+				82A51D1724E692F6003D2B00 /* CSRBLEUtil.m in Sources */,
 				8206ED6221FEB6E70072EAD8 /* AppDelegate.m in Sources */,
 				8206ED8421FEB7420072EAD8 /* MOSersViewController.m in Sources */,
+				82A51D1124E68F64003D2B00 /* NSData+HexRepresentation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
